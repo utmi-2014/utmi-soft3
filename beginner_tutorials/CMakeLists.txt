@@ -106,17 +106,12 @@ include_directories(
 
 ## Declare a cpp executable
 # add_executable(beginner_tutorials_node src/beginner_tutorials_node.cpp)
-add_executable(listener2 src/listener2.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
 # add_dependencies(beginner_tutorials_node beginner_tutorials_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(
-  listener2
-  ${catkin_LIBRARIES}
-)
 
 #############
 ## Install ##
@@ -165,3 +160,16 @@ target_link_libraries(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+add_executable(listener2 src/listener2.cpp)
+target_link_libraries(listener2 ${catkin_LIBRARIES})
+
+add_executable(add_two_ints_server src/add_two_ints_server.cpp)
+target_link_libraries(add_two_ints_server ${catkin_LIBRARIES})
+add_executable(add_two_ints_client src/add_two_ints_client.cpp)
+target_link_libraries(add_two_ints_client ${catkin_LIBRARIES})
+
+# add_executable(simple_action_server src/simple_action_server.cpp)
+# target_link_libraries(simple_action_server ${catkin_LIBRARIES})
+add_executable(simple_action_client src/simple_action_client.cpp)
+target_link_libraries(simple_action_client ${catkin_LIBRARIES})
