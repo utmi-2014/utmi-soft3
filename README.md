@@ -4,7 +4,7 @@ utmech-soft3
 ROS pkgs used in the class "Software3".
 
 
-How to use in your catkin workspace
+How to use this package in your catkin workspace
 ---
 ```bash
 # clone this repo to the src directory in your catkin workspace
