@@ -18,6 +18,6 @@ $ catkin_make install
 $ source ~/catkin/devel/setup.bash
 
 # run samples
-$ rosrun wken_beginner_tutorials talker.py
-$ rosrun wken_keyop velocity.py
+$ rosrun beginner_tutorials talker.py
+$ rosrun keyop velocity.py
 ```
