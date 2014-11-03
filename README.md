@@ -21,3 +21,15 @@ $ source ~/catkin/devel/setup.bash
 $ rosrun beginner_tutorials talker.py
 $ rosrun keyop velocity.py
 ```
+
+How to contribute to this repository
+---
+* First, fork this repository.
+* Setup the git remote target in your local workspace.
+```bash
+$ cd ~/catkin_ws/src/utmech-soft3
+$ git branch $(your-github-username)
+$ git checkout $(your-github-username)
+$ git remote add $(your-github-username) git@github.com:$(your-github-username)/utmech-soft3
+```
+* Change the sources in the branch and send pull requests!
