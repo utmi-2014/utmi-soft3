@@ -9,7 +9,7 @@ How to use this package in your catkin workspace
 ```bash
 # clone this repo to the src directory in your catkin workspace
 $ cd ~/catkin_ws/src
-$ git clone https://github.com/wkentaro/utmech-soft3.git
+$ git clone https://github.com/utmech-2014/utmech-soft3.git
 
 # make it
 $ cd ..
