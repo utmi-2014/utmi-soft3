@@ -28,8 +28,8 @@ How to contribute to this repository
 * Setup the git remote target in your local workspace.
 ```bash
 $ cd ~/catkin_ws/src/utmech-soft3
-$ git branch YOUR-GITHUB-USRNAME
-$ git checkout YOUR-GITHUB-USRNAME
-$ git remote add YOUR-GITHUB-USRNAME git@github.com:YOUR-GITHUB-USRNAME/utmech-soft3
+$ git branch YOUR-GITHUB-USERNAME
+$ git checkout YOUR-GITHUB-USERNAME
+$ git remote add YOUR-GITHUB-USERNAME git@github.com:YOUR-GITHUB-USERNAME/utmech-soft3
 ```
 * Change the sources in the branch and send pull requests!
