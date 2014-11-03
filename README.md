@@ -19,7 +19,7 @@ $ source ~/catkin/devel/setup.bash
 
 # run samples
 $ rosrun beginner_tutorials talker.py
-$ rosrun keyop velocity.py
+$ rosrun my_keyop velocity.py
 ```
 
 How to contribute to this repository
