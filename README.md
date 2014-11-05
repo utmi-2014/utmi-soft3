@@ -6,6 +6,7 @@ ROS pkgs used in the class "Software3".
 
 How to use this package in your catkin workspace
 ---
+このROSパッケージを自分の環境で使うときの設定。
 ```bash
 # clone this repo to the src directory in your catkin workspace
 $ cd ~/catkin_ws/src
