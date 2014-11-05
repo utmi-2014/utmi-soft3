@@ -25,8 +25,10 @@ $ rosrun my_keyop velocity.py
 
 How to contribute to this repository
 ---
+contributeの仕方。
 * First, fork this repository.
 * Setup the git remote target in your local workspace.
+
 ```bash
 $ cd ~/catkin_ws/src/utmech-soft3
 $ git branch YOUR-GITHUB-USERNAME
