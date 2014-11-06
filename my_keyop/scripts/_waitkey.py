@@ -44,7 +44,7 @@ def waitkey():
                 # print "Got character", key
                 return key
             except IOError:
-                pass
+                return None
     finally:
         termios.tcsetattr(fd, termios.TCSAFLUSH, oldterm)
         fcntl.fcntl(fd, fcntl.F_SETFL, oldflags)
