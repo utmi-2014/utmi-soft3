@@ -1,4 +1,4 @@
-Euslisp excercises
+Lisp examples
 ===
 
 ```bash
