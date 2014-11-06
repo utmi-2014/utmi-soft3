@@ -1,37 +1,4 @@
-(defclass bodyset-link
-  :super bodyset
-  :slots (joint parent-link child-links analysis-level default-coords
-                weight acetroid inertia-tensor
-                angular-velocity angular-acceleration
-                spacial-veocity spacial-acceleration
-                momentum-velocity angular-momentum-velocity
-                momentum angular-momentum
-                force moment ext-force ext-moment))
-;; joint
-(defclass joint
-  :super propertied-object
-  :slots (parent-link child-link joint-angle min-angle max-angle default-coords))
-(defmethod joint
-  (:init (&key name
-               ((:child-link clink)) ((:parent-link plink))
-               (min -90) (max 90) &allow-other-keys)
-         (send self :name name)
-         (setq parent-link plink child-link clink
-               min-angle min max-angle max)
-         self))
-(defclass rotational-joint
-     :super joint
-     :slots (axis))
-(defmethod rotational-joint
-  (:init (&rest args &key ((:axis ax) :z) &allow-other-keys)
-         (setq axis ax joint-angle 0.0)
-         (send-super* :init args)
-  (:joint-angle
-    (&optional v)
-    (when v
-      (setq relang (- v joint-angle) joint-angle v)
-      (send child-link :rotate (deg2rad relang) axis)))
-  joint-angle))
+;; P7
 
 ;; make servo module
 (defun make-servo nil
@@ -59,5 +26,17 @@
 (send r :assoc h1)
 (send h1 :assoc s1)
 (setq (r . links) (list h1 s1))
-; (setq (r . joint-list) (list j1))
-; (send r :init-ending)
+(setq (r . joint-list) (list j1))
+(send r :init-ending)
+
+;; draw objects
+(objects (list r))
+
+;; make servo move
+(setq i -1)
+(do-until-key
+  (send r :angle-vector (float-vector (* i 30)))
+  (send *irtviewer* :draw-objects)
+  (x::window-main-one)
+  (setq i (* i -1))
+  )

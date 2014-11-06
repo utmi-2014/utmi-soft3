@@ -1,3 +1,5 @@
+;; P20
+
 ;; (setq c1 (make-cube 5 5 5))
 (setq c1 (make-gdome (make-icosahedron 5.0)))
 (send c1 :set-color :yellow)
