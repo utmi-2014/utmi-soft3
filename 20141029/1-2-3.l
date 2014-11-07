@@ -1,3 +1,5 @@
+;; P5
+
 (setq c1 (make-cube 100 100 100))
 (setq c2 (make-cube 50 50 50))
 (send c1 :set-color :red)
