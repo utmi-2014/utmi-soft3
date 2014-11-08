@@ -1,3 +1,11 @@
+; P6
+
 (defun our-third (x) (car (cdr (cdr x))))
-(setq a '(1 2 3 4 5))
-(print (our-third a))
+
+(print
+  (setq a '(1 2 3 4 5))
+  )
+
+(print
+  (our-third a)
+  )
