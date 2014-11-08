@@ -45,3 +45,26 @@
     )
   )
 (format t "~%number of lst is: ~A." (n-a-symbol-recur lst 0))
+
+;; nilでない要素の合計を書こうとしたが..
+; 1)
+(setq lst (list 1 nil 2 nil 3 4 nil 5 6))
+(defun summit (lst)
+  ; (remove nil lst) ; remove
+  (setq lst (remove nil lst)) ; add
+  (apply #'+ lst))
+(format t "~%sum of lst is ~A." (summit lst))
+
+; 2)
+(defun summit2 (lst)
+  (if (null lst) ; add
+    0            ; add
+    (let ((x (car lst)))
+      (if (null x)
+        (summit (cdr lst))
+        (+ x (summit (cdr lst)))
+        )
+      )
+    )            ; add
+  )
+(format t "~%sum of lst is ~A." (summit2 lst))
