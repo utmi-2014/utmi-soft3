@@ -17,7 +17,7 @@ $ git clone https://github.com/utmech-2014/utmech-soft3.git
 $ cd ..
 $ catkin_make
 $ catkin_make install
-$ source ~/catkin/soft3/devel/setup.bash
+$ source ~/catkin_ws/soft3/devel/setup.bash
 
 # run samples
 $ rosrun beginner_tutorials talker.py
