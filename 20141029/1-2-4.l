@@ -17,10 +17,10 @@
 (objects (list r))
 
 ;; make servo move
-(setq i -1)
+(setq i 0)
 (do-until-key
-  (send r :angle-vector (float-vector (* i 30)))
+  (send r :angle-vector (float-vector (* 90 (sin (/ i 100.0)))))
   (send *irtviewer* :draw-objects)
   (x::window-main-one)
-  (setq i (* i -1))
+  (setq i (+ i 1))
   )
