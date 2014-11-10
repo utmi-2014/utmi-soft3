@@ -18,7 +18,27 @@
   )
 
 ;; 正の整数を引数とし, その数のピリオドを表示する
-
+(setq n 23)
+;; iteration
+(defun n-period-iter (n)
+  (format t "~%")
+  (dotimes (i n)
+    (format t ".")
+    )
+  )
+(n-period-iter n)
+;; recurrence
+(format t "~%")
+(defun n-period-recur (n)
+  (if (eql n 0)
+    t
+    (let ()
+      (format t ".")
+      (n-period-recur (- n 1))
+      )
+    )
+  )
+(n-period-recur n)
 
 ;; 一つのリストを引数とし, aというシンボルがいくつあるか返す.
 (setq lst (list 'a 'b 'test 'a 't 'a 'test))
