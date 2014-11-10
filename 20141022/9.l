@@ -19,6 +19,17 @@
 
 ;; 正の整数を引数とし, その数のピリオドを表示する
 
+(defun fac(n)
+	(dotimes (i n)
+		(format t "."))
+	(print "fac end")))
+
+(defun fac2(n)
+       (if (>= n 1)
+       	   (progn
+	   (format t ".")
+	   (fac2 (- n 1))
+	   (t)))))
 
 ;; 一つのリストを引数とし, aというシンボルがいくつあるか返す.
 (setq lst (list 'a 'b 'test 'a 't 'a 'test))
