@@ -1,19 +1,21 @@
-;; P20
+(setq sun (make-gdome (make-icosahedron 50.0)))
+(setq earth (make-gdome (make-icosahedron 15.0)))
+(setq moon (make-gdome (make-icosahedron 5.0)))
 
-;; (setq c1 (make-cube 5 5 5))
-(setq c1 (make-gdome (make-icosahedron 5.0)))
-(send c1 :set-color :yellow)
-(send c1 :locate #f(30 30 0))
+(send sun :set-color :red)
+(send earth :set-color :blue)
+(send moon :set-color :yellow)
 
-(setq c2 (make-gdome (make-icosahedron 10.0)))
-;; (setq c2 (make-cube 100 100 100))
-(send c2 :set-color :cyan)
+(send earth :locate #f(300 0 0))
+(send moon :locate #f(340 0 0))
 
-(send c2 :assoc c1)
+(send sun :assoc earth)
+(send earth :assoc moon)
 
-(objects (list c1 c2))
-
+(objects (list sun earth moon))
 (do-until-key
-  (send c2 :rotate (deg2rad 5) :z)
+  (send sun :rotate (deg2rad 1) :z)
+  (send earth :rotate (deg2rad 2) :z)
   (send *irtviewer* :draw-objects)
-  (x::window-main-one))
+  (x::window-main-one) ;; process window event
+  )
