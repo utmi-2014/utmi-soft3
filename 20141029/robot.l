@@ -1,4 +1,4 @@
-;;p17,18
+;; P17,18
 (load "models/room73b2-scene.l")
 (load "models/h7-robot.l")
 (setq *room* (room73b2))
