@@ -18,24 +18,23 @@
   )
 
 ;; 正の整数を引数とし, その数のピリオドを表示する
-(defun fac(n)
+(defun n-period-iter(n)
   (dotimes (i n)
-    (format t "."))
-  (print "fac end"))
+    (format t ".")))
 (format t "~%")
-(fac 5)
+(n-period-iter 5)
 
-(defun fac2(n)
+(defun n-period-recur(n)
   (if (>= n 1)
     (progn
       (format t ".")
-      (fac2 (- n 1))
+      (n-period-recur (- n 1))
       )
     )
     t
   )
 (format t "~%")
-(fac2 5)
+(n-period-recur 5)
 
 ;; 一つのリストを引数とし, aというシンボルがいくつあるか返す.
 (setq lst (list 'a 'b 'test 'a 't 'a 'test))
@@ -50,7 +49,7 @@
     )
   cnt
   )
-(format t "~%number of lst is: ~A." (n-a-symbol-iter lst))
+(format t "~%number of a in lst is: ~A." (n-a-symbol-iter lst))
 ;; recurrence
 (defun n-a-symbol-recur (lst cnt)
   (if lst
@@ -61,7 +60,7 @@
     cnt
     )
   )
-(format t "~%number of lst is: ~A." (n-a-symbol-recur lst 0))
+(format t "~%number of a in lst is: ~A." (n-a-symbol-recur lst 0))
 
 ;; nilでない要素の合計を書こうとしたが..
 ; 1)
