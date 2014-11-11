@@ -4,7 +4,7 @@ utmech-soft3
 ROS pkgs used in the class "Software3".
 
 
-How to use this package in your catkin workspace
+How to use these ROS pkgs in your catkin workspace
 ---
 このROSパッケージを自分の環境で使うときの設定。
 ```bash
@@ -28,12 +28,20 @@ How to contribute to this repository
 ---
 contributeの仕方。
 * First, fork this repository.
-* Setup the git remote target in your local workspace.
-
+* Setup the git remote target in your local workspace __like below__.
+* Change the sources in the branch and send pull requests!
 ```bash
 $ cd ~/catkin_ws/soft3/src/utmech-soft3
 $ git branch YOUR-GITHUB-USERNAME
 $ git checkout YOUR-GITHUB-USERNAME
 $ git remote add YOUR-GITHUB-USERNAME git@github.com:YOUR-GITHUB-USERNAME/utmech-soft3
 ```
-* Change the sources in the branch and send pull requests!
+
+Information for git & GitHub
+---
+git の使い方 ドキュメント
+* [Git -Book](http://git-scm.com/book/ja/v1)
+
+Cheat Sheet
+* [GitHub - GIT CHEAT SHEET](https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf)
+* [Git Cheatsheet • NDP Software](http://ndpsoftware.com/git-cheatsheet.html)
