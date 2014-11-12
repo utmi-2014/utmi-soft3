@@ -1,41 +1,45 @@
 ;; P26
 
+(load "output_macro.l")
+
 ;; (car (x (cdr '(a (b c) d))))
-(print
-  (car (car (cdr '(a (b c) d))))
-  )
+(output
+ (car (car (cdr '(a (b c) d))))
+ )
 
 ;; (x 13 (/ 1 0)
 ;; 13
-(print 
+(output
   (or 13 (/ -1 0))
   )
 
 ;; (x #'list 1 nil)
 ;; (1)
-(print 
+(output
   (apply #'list 1 nil)
   )
 
 ;; 正の整数を引数とし, その数のピリオドを表示する
-(defun fac(n)
-  (dotimes (i n)
-    (format t "."))
-  (print "fac end"))
-(format t "~%")
-(fac 5)
+(defun print-period (num)
+  (progn
+    (dotimes (i num)
+      (format t "."))
+    (format t "~%")
+    ))
 
-(defun fac2(n)
-  (if (>= n 1)
-    (progn
-      (format t ".")
-      (fac2 (- n 1))
-      )
-    )
-    t
-  )
-(format t "~%")
-(fac2 5)
+(output
+ (print-period 5)
+ )
+
+(defun print-period-rec (num)
+  (if (<= num 0) (format t "~%")
+    (progn (format t ".")
+           (print-period-rec (- num 1))
+           )))
+
+(output
+ (print-period-rec 5)
+ )
 
 ;; 一つのリストを引数とし, aというシンボルがいくつあるか返す.
 (setq lst (list 'a 'b 'test 'a 't 'a 'test))
@@ -72,6 +76,10 @@
   (apply #'+ lst))
 (format t "~%sum of lst is ~A." (summit lst))
 
+(defun summit (lst)
+  (apply #'+ (remove nil lst))
+  )
+
 ; 2)
 (defun summit2 (lst)
   (if (null lst) ; add
@@ -85,3 +93,8 @@
     )            ; add
   )
 (format t "~%sum of lst is ~A." (summit2 lst))
+
+(defun summit2 (lst)
+  (if lst
+      (+ (or (car lst) 0) (summit (cdr lst)))
+    0))
