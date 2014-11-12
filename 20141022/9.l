@@ -1,10 +1,6 @@
 ;; P26
 
-(defmacro output (x)
-  `(progn ,(format t "~A" x)
-          (prin1 " --> ")
-          (format t "~A~%~%" ,x))
-  )
+(load "output_macro.l")
 
 ;; (car (x (cdr '(a (b c) d))))
 (output
@@ -80,7 +76,6 @@
   (apply #'+ lst))
 (format t "~%sum of lst is ~A." (summit lst))
 
-;; more simple
 (defun summit (lst)
   (apply #'+ (remove nil lst))
   )
@@ -99,7 +94,6 @@
   )
 (format t "~%sum of lst is ~A." (summit2 lst))
 
-;; more simple
 (defun summit2 (lst)
   (if lst
       (+ (or (car lst) 0) (summit (cdr lst)))
