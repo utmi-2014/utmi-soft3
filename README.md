@@ -39,7 +39,10 @@ $ git remote add YOUR-GITHUB-USERNAME git@github.com:YOUR-GITHUB-USERNAME/utmech
 
 Information for git & GitHub
 ---
-git の使い方 ドキュメント
+Git tutorial video in Japanese
+* [git入門 (全22回) - プログラミングならドットインストール](http://dotinstall.com/lessons/basic_git)
+
+Git Documentation
 * [Git -Book](http://git-scm.com/book/ja/v1)
 
 Cheat Sheet
