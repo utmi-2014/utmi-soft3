@@ -21,11 +21,10 @@
 
 ;; 正の整数を引数とし, その数のピリオドを表示する
 (defun print-period (num)
-  (progn
     (dotimes (i num)
       (format t "."))
     (format t "~%")
-    ))
+    )
 
 (output
  (print-period 5)
