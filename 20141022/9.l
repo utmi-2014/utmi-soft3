@@ -10,7 +10,7 @@
 ;; (x 13 (/ 1 0)
 ;; 13
 (output
-  (or 13 (/ -1 0))
+  (or 13 (/ 1 0))
   )
 
 ;; (x #'list 1 nil)
@@ -21,11 +21,10 @@
 
 ;; 正の整数を引数とし, その数のピリオドを表示する
 (defun print-period (num)
-  (progn
     (dotimes (i num)
       (format t "."))
     (format t "~%")
-    ))
+    )
 
 (output
  (print-period 5)
