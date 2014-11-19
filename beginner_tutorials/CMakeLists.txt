@@ -169,7 +169,7 @@ include_directories(
 # add_executable(add_two_ints_client src/add_two_ints_client.cpp)
 # target_link_libraries(add_two_ints_client ${catkin_LIBRARIES})
 
-# add_executable(simple_action_server src/simple_action_server.cpp)
-# target_link_libraries(simple_action_server ${catkin_LIBRARIES})
-# add_executable(simple_action_client src/simple_action_client.cpp)
-# target_link_libraries(simple_action_client ${catkin_LIBRARIES})
+add_executable(simple_action_server src/simple_action_server.cpp)
+target_link_libraries(simple_action_server ${catkin_LIBRARIES})
+add_executable(simple_action_client src/simple_action_client.cpp)
+target_link_libraries(simple_action_client ${catkin_LIBRARIES})
