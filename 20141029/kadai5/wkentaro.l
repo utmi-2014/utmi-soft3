@@ -1,4 +1,5 @@
-; P12
+;; P20
+;; 3 練習問
 
 (defclass 6dof-robot
   :super cascaded-link
