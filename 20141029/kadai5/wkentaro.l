@@ -10,7 +10,7 @@
 
            (setq b (make-cube 10 10 20))
            (send b :locate #f(0 0 10))
-           (send b :set-color :red)
+           (send b :set-color :white)
            (setq l5 (instance bodyset-link :init (make-cascoords) :bodies (list b) :name 'l5))
            (setq end-coords (make-cascoords :pos #f(0 0 20)))
            (send l5 :assoc end-coords)
@@ -18,7 +18,7 @@
            ;;
            (setq b (make-cube 10 10 100))
            (send b :locate #f(0 0 50))
-           (send b :set-color :white)
+           (send b :set-color :red)
            (setq l4 (instance bodyset-link :init (make-cascoords) :bodies (list b) :name 'l4))
            (send l4 :assoc l5)
            (send l4 :locate #f(0 0 100))
