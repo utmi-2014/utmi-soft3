@@ -1,9 +1,9 @@
 ; P12
 
-(defclass 3dof-robot
+(defclass 6dof-robot
   :super cascaded-link
   :slots (end-coords l1 l2 l3 l4 l5 l6 l7 j1 j2 j3 j4 j5 j6))
-(defmethod 3dof-robot
+(defmethod 6dof-robot
   (:init ()
          (let (b)
            (send-super :init)
@@ -77,7 +77,25 @@
   (:end-coords (&rest args) (forward-message-to end-coords args))
   )
 
-(setq r (instance 3dof-robot :init))
-; (objects (list r))
+(setq r (instance 6dof-robot :init))
 (objects (list r (send r :end-coords)))
-(send r :angle-vector #f(30 30 30 30 30 30))
+(setq translation-axis t)
+(setq rotation-axis nil)
+(send r :angle-vector #f(40 -20 -10 40 20 20))
+(dotimes (i 2000)
+  (setq j (send r :calc-jacobian-from-link-list
+                (send r :link-list (send r :end-coords :parent))
+                :move-target (send r :end-coords)
+                :rotation-axis rotation-axis
+                :translation-axis translation-axis))
+  (setq j# (sr-inverse j))
+  (setq c (make-cascoords
+            :pos (float-vector (+ 150 (* 10 (sin (/ i 10))))
+                               (+ 10 (* 10 (sin (/ i 10))))
+                               (+ 230 (* 10 (sin (/ i 10)))))))
+  (setq dif-pos (send (send r :end-coords) :difference-position c))
+  (setq da (transform j# dif-pos))
+  (send r :angle-vector (v+ (send r :angle-vector) da))
+  (send *irtviewer* :draw-objects :flush nil)
+  (send c :draw-on :flush t)
+  )
