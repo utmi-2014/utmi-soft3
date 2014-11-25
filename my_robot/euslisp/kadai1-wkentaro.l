@@ -14,9 +14,13 @@
     (case
      world
      ('wkentaro
+      (setq box (make-cube 300 300 200))
+      (send box :locate #f(500 0 100))
+      (send box :set-color :red)
       (setq *macbookpro* (make-macbookpro))
-      (send *macbookpro* :locate #f(600 0 0))
-      (setq objects (list *macbookpro*))
+      (send *macbookpro* :locate #f(600 0 200))
+      (send *macbookpro* :rotate 1.57 :z)
+      (setq objects (list box *macbookpro*))
       (setq init-coords (make-coords)))
      (t
        ;;世界を構成するobjectを生成する
