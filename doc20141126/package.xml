@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <package>
-  <name>my_keyop</name>
+  <name>doc20141126</name>
   <version>0.0.0</version>
-  <description>The my_keyop package</description>
+  <description>The doc20141126 package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag --> 
   <!-- Example:  -->
   <!-- <maintainer email="jane.doe@example.com">Jane Doe</maintainer> -->
-  <maintainer email="ken@todo.todo">ken</maintainer>
+  <maintainer email="wken@todo.todo">wken</maintainer>
 
 
   <!-- One license tag required, multiple allowed, one license per tag -->
@@ -19,7 +19,7 @@
   <!-- Url tags are optional, but mutiple are allowed, one per tag -->
   <!-- Optional attribute type can be: website, bugtracker, or repository -->
   <!-- Example: -->
-  <!-- <url type="website">http://wiki.ros.org/my_keyop</url> -->
+  <!-- <url type="website">http://wiki.ros.org/doc20141126</url> -->
 
 
   <!-- Author tags are optional, mutiple are allowed, one per tag -->
@@ -41,9 +41,15 @@
   <!--   <test_depend>gtest</test_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>geometry_msgs</build_depend>
-  <build_depend>kobuki_msgs</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>roseus</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
   <run_depend>geometry_msgs</run_depend>
-  <run_depend>kobuki_msgs</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>roseus</run_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>std_msgs</run_depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->
