@@ -1,5 +1,5 @@
 ; P1
-(load "../20141029/1.3.3.l")
+(load "../doc20141029/1.3.3.l")
 
 (setq translation-axis t)
 (setq rotation-axis t)
