@@ -25,7 +25,8 @@
     ;;
     ;; calc world coordinates of target object pose
     ;; (setq cam (send *pr2* :camera "wide_stereo/right")) see https://github.com/jsk-ros-pkg/jsk_pr2eus/issues/61
-    (setq cam (find :wide_stereo/right (send *dxl-armed-turtlebot* :cameras)  :key #'(lambda (a) (send a :name))))
+    ; (setq cam (find :wide_stereo/right (send *dxl-armed-turtlebot* :cameras)  :key #'(lambda (a) (send a :name))))
+    (setq cam (send *dxl-armed-turtlebot* :arm :end-coords))
     (setq target-world (send target-local :transform (send cam :worldcoords) :parent))
     (send-all (send *ri* :objects) :move-to target-world :world)
 
@@ -47,6 +48,7 @@
   (warning-message 2 "setup visualizer~%")
   (if (not (boundp '*dxl-armed-turtlebot*)) (setq *dxl-armed-turtlebot* (dxl-armed-turtlebot)))
   (if (not (boundp '*target-object*)) (setq *target-object* (chessboard-30-7x5 :name "/test_object")))
+  (send *target-object* :locate (send *dxl-armed-turtlebot* :arm :end-coords :worldpos))
   (setq *ri* (instance dxl-armed-turtlebot-interface :init :objects (list *target-object*)))
   (send *dxl-armed-turtlebot* :reset-pose))
 
@@ -59,7 +61,7 @@
   (ros::subscribe "ObjectDetection" posedetection_msgs::ObjectDetection #'checkerboard-cb))
 
 ;;
-(ros::roseus "vision-action-example3")
+(ros::roseus "kadai2-wkentaro")
 (init-robot)
 (init-roseus)
 ;; main loop

@@ -1,0 +1,6 @@
+<launch>
+  <include file="$(find roseus_tutorials)/launch/usb-camera.launch"></include>
+  <include file="$(find roseus_tutorials)/launch/checkerboard-detector.launch"></include>
+  <node pkg="roseus_tutorials" type="checkerboard-detector.l" name="object_detection_client"></node>
+  <node pkg="doc20141126" type="kadai2-wkentaro.l" name="kadai2_wkentaro"></node>
+</launch>
