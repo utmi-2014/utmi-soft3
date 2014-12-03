@@ -1,0 +1,11 @@
+SOURCES=camera_capture
+CFLAGS=`pkg-config --cflags opencv`
+LDFLAGS=`pkg-config --libs opencv`
+
+all: ${SOURCES}
+
+camera_capture: camera_capture.cpp
+	g++ -o $@ $< ${CFLAGS} ${LDFLAGS}
+
+clean:
+	rm -rf ${SOURCES}
