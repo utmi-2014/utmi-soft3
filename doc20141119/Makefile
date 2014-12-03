@@ -28,4 +28,4 @@ ffi_cython.so: setup.py
 	python setup.py build_ext --inplace
 
 clean:
-	rm -rf *.o *.so ${SOURCES} ffi_c.py ffi_class.py
+	rm -rf *.o *.so ${SOURCES} ffi_c.py ffi_class.py build/
