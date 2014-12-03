@@ -3,7 +3,7 @@
 #include <math.h>
 #include <stdio.h>
 
-int hello(char *str) {
+void hello(char *str) {
     fprintf(stdout, "%s\n", str);
 }
 
