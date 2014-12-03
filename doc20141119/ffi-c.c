@@ -1,4 +1,5 @@
 /* ffi-c.c */
+// P6
 #include <math.h>
 #include <stdio.h>
 
