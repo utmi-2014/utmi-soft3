@@ -1,4 +1,4 @@
-SOURCES=ffi-c++ ffi-c++-main ffi-c.so ffi-c_wrap.c _ffi_c.so
+SOURCES=ffi-c++ ffi-c++-main ffi-c.so ffi-c_wrap.c _ffi_c.so ffi-class_wrap.cxx _ffi_class.so
 all: ${SOURCES}
 
 ffi-c++: ffi-c++.cpp
@@ -18,5 +18,11 @@ ffi-c_wrap.c: ffi-c.i
 _ffi_c.so: ffi-c.c ffi-c_wrap.c
 	gcc -I/usr/include/python2.7 -shared -fPIC -o $@ $^
 
+ffi-class_wrap.cxx: ffi-class.i
+	swig -c++ -python $<
+
+_ffi_class.so: ffi-class.cpp ffi-class_wrap.cxx
+	g++ -I/usr/include/python2.7 -shared -fPIC -o $@ $^ -lm -lstdc++
+
 clean:
-	rm -rf *.o *.so ${SOURCES} ffi_c.py
+	rm -rf *.o *.so ${SOURCES} ffi_c.py ffi_class.py

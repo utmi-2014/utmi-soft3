@@ -1,4 +1,5 @@
 /* ffi-c.i */
+/* P10 */
 %module ffi_c
 %{
   extern void hello(char *str);
