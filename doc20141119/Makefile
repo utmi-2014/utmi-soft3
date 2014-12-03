@@ -1,5 +1,8 @@
-SOURCES=ffi-c++ ffi-c++-main
+SOURCES=ffi-c++ ffi-c++-main ffi-c
 all: ${SOURCES}
+
+ffi-c: ffi-c.c
+	gcc -shared -fPIC -o ffi-c.so ffi-c.c -lm
 
 ffi-c++: ffi-c++.cpp
 	gcc -c $^
