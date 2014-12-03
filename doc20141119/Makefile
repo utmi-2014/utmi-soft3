@@ -1,4 +1,4 @@
-SOURCES=ffi-c++ ffi-c++-main ffi-c.so ffi-c_wrap.c _ffi_c.so ffi-class_wrap.cxx _ffi_class.so
+SOURCES=ffi-c++ ffi-c++-main ffi-c.so ffi-c_wrap.c _ffi_c.so ffi-class_wrap.cxx _ffi_class.so ffi_cython.so
 all: ${SOURCES}
 
 ffi-c++: ffi-c++.cpp
@@ -23,6 +23,9 @@ ffi-class_wrap.cxx: ffi-class.i
 
 _ffi_class.so: ffi-class.cpp ffi-class_wrap.cxx
 	g++ -I/usr/include/python2.7 -shared -fPIC -o $@ $^ -lm -lstdc++
+
+ffi_cython.so: setup.py
+	python setup.py build_ext --inplace
 
 clean:
 	rm -rf *.o *.so ${SOURCES} ffi_c.py ffi_class.py

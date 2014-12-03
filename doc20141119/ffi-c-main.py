@@ -5,6 +5,9 @@
 import ctypes
 ffi = ctypes.CDLL('./ffi-c.so')
 
+ffi.sinc.argtypes = [ctypes.c_char_p]
+ffi.hello('world')
+
 ffi.sinc.argtypes = [ctypes.c_double]
 ffi.sinc.restype = ctypes.c_double
 print 'sin(1.0) = ', ffi.sinc(1.0)

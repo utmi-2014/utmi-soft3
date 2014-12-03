@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 void hello(char *str) {
-    fprintf(stdout, "%s\n", str);
+    fprintf(stdout, "hello, %s!!\n", str);
 }
 
 double sinc(double x) {

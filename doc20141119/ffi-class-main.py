@@ -8,5 +8,5 @@ Python version for document P15
 import ffi_class
 
 exp = ffi_class.Example()
-exp.Hello('test')
+exp.Hello('python')
 exp.Sinc(1.)
