@@ -3,6 +3,17 @@ utmech-soft3
 
 ROS pkgs used in the class "Software3".
 
+Outline
+---
+1. 10/01　イントロダクション(環境設定)
+1. 10/08　ロボットオペレーション(ROS)
+1. 10/22　ロボット研究言語(Euslisp)
+1. 10/29　ロボットモデリング
+1. 11/05　ロボットモデリング補足
+1. 11/12　ロボットアーキテクチャ
+1. 11/19　外部関数インターフェース
+1. 11/26　roseus復習
+1. 12/03　分散オブジェクト通信
 
 How to use these ROS pkgs in your catkin workspace
 ---
