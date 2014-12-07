@@ -1,0 +1,5 @@
+module EchoApp {
+  interface Echo {
+    void echoString(in string input);
+  };
+};
