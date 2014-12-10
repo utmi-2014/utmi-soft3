@@ -1,5 +1,9 @@
-/* echo-server.c */
-/* P4 */
+/* << echo-server.c >>
+ * echo-server program. Hacked from Echo test suite by
+ * <birney@sanger.ac.uk>, ORBit2 udpate by Frank Rehberger
+ * <F.Rehberger@xtradyne.de>
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -21,7 +25,7 @@ CORBA_Object server_activate_service(CORBA_ORB orb, PortableServer_POA poa,
     return ref;
 }
 
-int main(int argc, char* argv[]) {
+int main(int argc, char *argv[]) {
     CORBA_Object servant = CORBA_OBJECT_NIL;
     CosNaming_NamingContext name_service = CORBA_OBJECT_NIL;
 
@@ -39,6 +43,9 @@ int main(int argc, char* argv[]) {
     g_print("Binding service reference from name-service with id\"%s\"\n", id[0]);
 
     name_service = etk_get_name_service(global_orb, ev);
+    etk_abort_if_exception(ev, "failed resolving name-service");
+
+    etk_name_service_bind(name_service, servant, id, ev);
     etk_abort_if_exception(ev, "failed binding of service");
 
     server_run(global_orb, ev);
