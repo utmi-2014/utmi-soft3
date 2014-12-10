@@ -1,4 +1,8 @@
-/* echo-client.c */
+/* << echo-client.c >>
+ * Echo client program.. Hacked by Ewan Birney <birney@sanger.ac.uk>
+ * from echo test suite, update for ORBit2 by Frank Rehberger
+ * <F.Rehberger@xtradyne.de>
+ */
 /* P5 */
 #include <stdio.h>
 #include <signal.h>
