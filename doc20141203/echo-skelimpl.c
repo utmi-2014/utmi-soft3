@@ -120,6 +120,7 @@ const CORBA_char * input,
 CORBA_Environment *ev)
 {
  /* ------   insert method code here   ------ */
+    g_print(">> %s\n", input);
  /* ------ ---------- end ------------ ------ */
 }
 #endif
