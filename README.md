@@ -1,4 +1,4 @@
-utmech-soft3
+utmech-soft3 [![Build Status](https://api.travis-ci.org/utmech-2014/utmech-soft3.png)](https://travis-ci.org/utmech-2014/utmech-soft3)
 ============
 
 ROS pkgs used in the class "Software3".
