@@ -1,0 +1,5 @@
+fly(X) :- airplane(X).
+fly(X) :- superman(X).  /* added */
+airplane(jet_plane).
+airplane(helicopter).
+superman(taro).  /* added */

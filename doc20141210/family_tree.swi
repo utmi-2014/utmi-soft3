@@ -1,0 +1,32 @@
+/* male */
+male(taro).
+male(ichiro).
+male(jiro).
+male(saburo).
+/* female */
+female(hanako).
+female(tomoko).
+female(sachiko).
+female(youko).
+/* father */
+father_of(taro, ichiro).
+father_of(taro, jiro).
+father_of(taro, tomoko).
+father_of(ichiro, saburo).
+father_of(ichiro, youko).
+/* mother */
+mother_of(hanako, ichiro).
+mother_of(hanako, jiro).
+mother_of(hanako, tomoko).
+mother_of(sachiko, saburo).
+mother_of(sachiko, youko).
+/* parents_of */
+parents_of(X, Y) :- father_of(X, Y).
+parents_of(X, Y) :- mother_of(X, Y).
+/* child_of */
+child_of(X, Y) :- parents_of(Y, X).
+son_of(X, Y) :- parents_of(Y, X), male(X).
+daughter_of(X, Y) :- parents_of(Y, X), female(X).
+/* grandfather_of */
+grandfather_of(X, Y) :- parents_of(Z, Y), father_of(X, Z).
+grandmother_of(X, Y) :- parents_of(Z, Y), mother_of(X, Z).
