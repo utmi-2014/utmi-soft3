@@ -1,0 +1,46 @@
+% adder.swi
+% author: Kentaro Wada <www.kentaro.wada@gmail.com>
+
+% and
+log_and(X, Y, Z) :- X is 0, Y is 0, Z is 0.
+log_and(X, Y, Z) :- X is 1, Y is 0, Z is 0.
+log_and(X, Y, Z) :- X is 0, Y is 1, Z is 0.
+log_and(X, Y, Z) :- X is 1, Y is 1, Z is 1.
+
+% or
+log_or(X, Y, Z) :- X is 0, Y is 0, Z is 0.
+log_or(X, Y, Z) :- X is 1, Y is 0, Z is 1.
+log_or(X, Y, Z) :- X is 0, Y is 1, Z is 1.
+log_or(X, Y, Z) :- X is 1, Y is 1, Z is 1.
+
+% xor
+log_xor(X, Y, Z) :- X is 0, Y is 0, Z is 0.
+log_xor(X, Y, Z) :- X is 1, Y is 0, Z is 1.
+log_xor(X, Y, Z) :- X is 0, Y is 1, Z is 1.
+log_xor(X, Y, Z) :- X is 1, Y is 1, Z is 0.
+
+% nand
+log_nand(X, Y, Z) :- X is 0, Y is 0, Z is 1.
+log_nand(X, Y, Z) :- X is 1, Y is 0, Z is 1.
+log_nand(X, Y, Z) :- X is 0, Y is 1, Z is 1.
+log_nand(X, Y, Z) :- X is 1, Y is 1, Z is 0.
+
+% nor
+log_nor(X, Y, Z) :- X is 0, Y is 0, Z is 1.
+log_nor(X, Y, Z) :- X is 1, Y is 0, Z is 0.
+log_nor(X, Y, Z) :- X is 0, Y is 1, Z is 0.
+log_nor(X, Y, Z) :- X is 1, Y is 1, Z is 0.
+
+% half adder
+half_adder(A, B, C, S) :- log_or(A, B, D1),
+  log_and(A, B, D2), log_nand(D2, D2, D3),
+  log_and(D1, D3, S), C is D2.
+half_adder2(A, B, C, S) :- log_xor(A, B, D1),
+  log_and(A, B, D2), C is D2, S is D1.
+
+% full adder
+full_adder(A, B, X, C, S) :- A1 is A, B1 is B,
+  half_adder(A1, B1, C1, S1),
+  A2 is S1, B2 is X,
+  half_adder(A2, B2, C2, S2),
+  S is S2, log_or(C1, C2, C).
