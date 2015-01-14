@@ -1,16 +1,11 @@
-/* << echo-server.c >>
- * echo-server program. Hacked from Echo test suite by
- * <birney@sanger.ac.uk>, ORBit2 udpate by Frank Rehberger
- * <F.Rehberger@xtradyne.de>
- */
-
+/* echo-server.c */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <signal.h>
 #include <orbit/orbit.h>
 
-#include "echo-skelimpl.c"
+#include "add-skelimpl.c"
 #include "examples-toolkit.h"
 
 CORBA_ORB global_orb = CORBA_OBJECT_NIL; /* global orb */
@@ -18,8 +13,8 @@ PortableServer_POA root_poa = CORBA_OBJECT_NIL; /* root POA */
 
 CORBA_Object server_activate_service(CORBA_ORB orb, PortableServer_POA poa,
                                      CORBA_Environment *ev) {
-    EchoApp_Echo ref = CORBA_OBJECT_NIL;
-    ref = impl_EchoApp_Echo__create(poa, ev);
+    AddApp_Add ref = CORBA_OBJECT_NIL;
+    ref = impl_AddApp_Add__create(poa, ev);
     if (etk_raised_exception(ev))
         return CORBA_OBJECT_NIL;
     return ref;
@@ -29,7 +24,7 @@ int main(int argc, char *argv[]) {
     CORBA_Object servant = CORBA_OBJECT_NIL;
     CosNaming_NamingContext name_service = CORBA_OBJECT_NIL;
 
-    gchar *id[] = {"EchoApp", "Echo", NULL};
+    gchar *id[] = {"AddApp", "Add", NULL};
 
     CORBA_Environment ev[1];
     CORBA_exception_init(ev);

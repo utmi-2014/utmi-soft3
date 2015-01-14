@@ -1,0 +1,5 @@
+module AddApp {
+  interface Add {
+    void addInts(in short input_a, in short input_b);
+  };
+};
