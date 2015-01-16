@@ -1,18 +1,18 @@
-/* add-client.c */
+/* add-two-ints-client.c */
 #include <stdio.h>
 #include <signal.h>
 #include <string.h>
 #include <stdlib.h>
 #include <orbit/orbit.h>
 
-#include "add.h"
+#include "add-two-ints.h"
 #include "examples-toolkit.h" /* ie. ek_abort_if_exception() */
 
 CORBA_ORB global_orb = CORBA_OBJECT_NIL; /* global orb */
 
 static void client_run(AddApp_Add add_service, short input_a, short input_b, CORBA_Environment *ev) {
     printf("%d %d\n", input_a, input_b);
-    AddApp_Add_addInts(add_service, input_a, input_b, ev);
+    AddApp_Add_addTwoInts(add_service, input_a, input_b, ev);
     if (etk_raised_exception(ev)) return;
 }
 

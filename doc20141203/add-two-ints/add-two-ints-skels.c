@@ -4,17 +4,17 @@
 
 #include <string.h>
 #define ORBIT2_STUBS_API
-#include "add.h"
+#include "add-two-ints.h"
 
 static ORBitSmallSkeleton get_skel_small_AddApp_Add(POA_AddApp_Add *servant,
 const char *opname,gpointer *m_data, gpointer *impl)
 {
 switch(opname[0]) {
 case 'a':
-if(strcmp((opname + 1), "ddInts")) break;
-*impl = (gpointer)servant->vepv->AddApp_Add_epv->addInts;
+if(strcmp((opname + 1), "ddTwoInts")) break;
+*impl = (gpointer)servant->vepv->AddApp_Add_epv->addTwoInts;
 {ORBit_IInterface *volatile _t_=&AddApp_Add__iinterface;*m_data = (gpointer)&_t_->methods._buffer [0];}
-return (ORBitSmallSkeleton)_ORBIT_skel_small_AddApp_Add_addInts;
+return (ORBitSmallSkeleton)_ORBIT_skel_small_AddApp_Add_addTwoInts;
 break;
 default: break; 
 }

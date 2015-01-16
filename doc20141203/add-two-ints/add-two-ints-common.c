@@ -5,24 +5,33 @@
 #include <string.h>
 #define ORBIT2_STUBS_API
 #define ORBIT_IDL_C_COMMON
-#define add_COMMON
-#include "add.h"
+#define add_two_ints_COMMON
+#include "add-two-ints.h"
 
 static const CORBA_unsigned_long ORBit_zero_int = 0;
 
-#ifndef ORBIT_IDL_C_IMODULE_add
-void _ORBIT_skel_small_AddApp_Add_addInts(POA_AddApp_Add             *_o_servant, gpointer            _o_retval,gpointer           *_o_args,CORBA_Context       _o_ctx,CORBA_Environment  *_o_ev,
-void (*_impl_addInts)(PortableServer_Servant _servant, const CORBA_short input_a, const CORBA_short input_b, CORBA_Environment *ev)) {
-_impl_addInts (_o_servant, *(const CORBA_short *)_o_args[0], *(const CORBA_short *)_o_args[1], _o_ev);
+#ifndef ORBIT_IDL_C_IMODULE_add_two_ints
+void _ORBIT_skel_small_AddApp_Add_addTwoInts(POA_AddApp_Add             *_o_servant, gpointer            _o_retval,gpointer           *_o_args,CORBA_Context       _o_ctx,CORBA_Environment  *_o_ev,
+void (*_impl_addTwoInts)(PortableServer_Servant _servant, const CORBA_short input_a, const CORBA_short input_b, CORBA_Environment *ev)) {
+_impl_addTwoInts (_o_servant, *(const CORBA_short *)_o_args[0], *(const CORBA_short *)_o_args[1], _o_ev);
 }
 
 #endif
 #if ( (TC_IMPL_TC_AddApp_Add_0 == 'a') \
 && (TC_IMPL_TC_AddApp_Add_1 == 'd') \
 && (TC_IMPL_TC_AddApp_Add_2 == 'd') \
+&& (TC_IMPL_TC_AddApp_Add_3 == '_') \
+&& (TC_IMPL_TC_AddApp_Add_4 == 't') \
+&& (TC_IMPL_TC_AddApp_Add_5 == 'w') \
+&& (TC_IMPL_TC_AddApp_Add_6 == 'o') \
+&& (TC_IMPL_TC_AddApp_Add_7 == '_') \
+&& (TC_IMPL_TC_AddApp_Add_8 == 'i') \
+&& (TC_IMPL_TC_AddApp_Add_9 == 'n') \
+&& (TC_IMPL_TC_AddApp_Add_10 == 't') \
+&& (TC_IMPL_TC_AddApp_Add_11 == 's') \
 ) && !defined(TC_DEF_TC_AddApp_Add)
 #define TC_DEF_TC_AddApp_Add 1
-#ifdef ORBIT_IDL_C_IMODULE_add
+#ifdef ORBIT_IDL_C_IMODULE_add_two_ints
 static
 #endif
 ORBIT2_MAYBE_CONST struct CORBA_TypeCode_struct TC_AddApp_Add_struct = {
@@ -46,26 +55,26 @@ NULL,
 };
 #endif
 
-#ifndef ORBIT_IDL_C_IMODULE_add
+#ifndef ORBIT_IDL_C_IMODULE_add_two_ints
 CORBA_unsigned_long AddApp_Add__classid = 0;
 #endif
 
 /* Interface type data */
 
-static ORBit_IArg AddApp_Add_addInts__arginfo [] = {
+static ORBit_IArg AddApp_Add_addTwoInts__arginfo [] = {
 	{ TC_CORBA_short,  ORBit_I_ARG_IN | ORBit_I_COMMON_FIXED_SIZE, (char *)"input_a" },
 	{ TC_CORBA_short,  ORBit_I_ARG_IN | ORBit_I_COMMON_FIXED_SIZE, (char *)"input_b" }
 };
 
-#ifdef ORBIT_IDL_C_IMODULE_add
+#ifdef ORBIT_IDL_C_IMODULE_add_two_ints
 static
 #endif
 ORBit_IMethod AddApp_Add__imethods [] = {
 	{
-		{ 2, 2, AddApp_Add_addInts__arginfo, FALSE },
+		{ 2, 2, AddApp_Add_addTwoInts__arginfo, FALSE },
 		{ 0, 0, NULL, FALSE },
 		{ 0, 0, NULL, FALSE },
-TC_void, (char *)"addInts", 7,
+TC_void, (char *)"addTwoInts", 10,
 		0
 }
 };
@@ -73,7 +82,7 @@ TC_void, (char *)"addInts", 7,
 static CORBA_string AddApp_Add__base_itypes[] = {
 (char *)"IDL:omg.org/CORBA/Object:1.0"
 };
-#ifdef ORBIT_IDL_C_IMODULE_add
+#ifdef ORBIT_IDL_C_IMODULE_add_two_ints
 static
 #endif
 ORBit_IInterface AddApp_Add__iinterface = {

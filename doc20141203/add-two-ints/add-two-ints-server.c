@@ -5,7 +5,7 @@
 #include <signal.h>
 #include <orbit/orbit.h>
 
-#include "add-skelimpl.c"
+#include "add-two-ints-skelimpl.c"
 #include "examples-toolkit.h"
 
 CORBA_ORB global_orb = CORBA_OBJECT_NIL; /* global orb */
