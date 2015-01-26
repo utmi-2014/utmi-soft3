@@ -12,7 +12,7 @@ int main(int argc, char **argv)
 {
     ros::init(argc, argv, "do_dishes_server");
     ros::NodeHandle n;
-    Server server(n, "do_dishes", boost::bind(&execute, -1, &server), false);
+    Server server(n, "do_dishes", boost::bind(&execute, _1, &server), false);
     server.start();
 
     ros::spin();

@@ -1,8 +1,24 @@
-utmech-soft3
+utmi-soft3 [![Build Status](https://api.travis-ci.org/utmi-2014/utmi-soft3.png)](https://travis-ci.org/utmi-2014/utmi-soft3)
 ============
 
 ROS pkgs used in the class "Software3".
 
+Outline
+---
+1. 10/01　イントロダクション(環境設定)
+1. 10/08　ロボットオペレーション(ROS)
+1. 10/22　ロボット研究言語(Euslisp)
+1. 10/29　ロボットモデリング
+1. 11/05　ロボットモデリング補足
+1. 11/12　ロボットアーキテクチャ
+1. 11/19　外部関数インターフェース
+1. 11/26　roseus復習
+1. 12/03　分散オブジェクト通信
+1. 12/10　宣言的プログラミング
+1. 01/07　ガベージコレクション
+1. 01/14　ソフトウェアライセンス
+1. 01/21　オープンソース開発環境
+1. 01/28　試験
 
 How to use these ROS pkgs in your catkin workspace
 ---
@@ -21,7 +37,7 @@ $ source ~/catkin_ws/soft3/devel/setup.bash
 
 # run samples
 $ rosrun beginner_tutorials talker.py
-$ rosrun my_keyop velocity.py
+$ rosrun doc20141008 velocity.py
 ```
 
 How to contribute to this repository

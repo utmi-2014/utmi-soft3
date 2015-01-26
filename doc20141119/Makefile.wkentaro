@@ -1,0 +1,19 @@
+# camera_capture.cpp
+# kind: kadai
+# location: P20
+# author: Kentaro Wada <www.kentaro.wada@gmail.com>
+
+SOURCES=_camera_capture.so
+CFLAGS=`pkg-config --cflags opencv`
+LDFLAGS=`pkg-config --libs opencv`
+
+all: ${SOURCES}
+
+camera_capture_wrap.c: camera_capture.i
+	swig -python $<
+
+_camera_capture.so: camera_capture_wrap.c camera_capture.c
+	gcc -I/usr/include/python2.7 -shared -fPIC -o $@ $^ -lm ${CFLAGS} ${LDFLAGS}
+
+clean:
+	rm -rf ${SOURCES} camera_capture_wrap.c camera_capture.py

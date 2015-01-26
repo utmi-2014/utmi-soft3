@@ -1,17 +1,12 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(beginner_tutorials)
+project(doc20141008)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
-  message_generation
-  message_runtime
-  roscpp
-  rospy
-  std_msgs
-  actionlib actionlib_msgs
+  # kobuki_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -47,30 +42,30 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * uncomment the generate_messages entry below
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
-## Generate messages in the 'msg' folder
-add_message_files(
-  FILES
-  Hello.msg
-)
+# Generate messages in the 'msg' folder
+# add_message_files(
+#   FILES
+# )
 
-# Generate services in the 'srv' folder
-add_service_files(
-  FILES
-  AddTwoInts.srv
-)
+## Generate services in the 'srv' folder
+# add_service_files(
+#   FILES
+#   Service1.srv
+#   Service2.srv
+# )
 
 ## Generate actions in the 'action' folder
-add_action_files(
-  FILES
-  DoDishes.action
-)
+# add_action_files(
+#   FILES
+#   Action1.action
+#   Action2.action
+# )
 
 ## Generate added messages and services with any dependencies listed here
-generate_messages(
-  DEPENDENCIES
-  geometry_msgs#   std_msgs
-  actionlib_msgs
-)
+# generate_messages(
+#   DEPENDENCIES
+#   geometry_msgs#   kobuki_msgs
+# )
 
 ###################################
 ## catkin specific configuration ##
@@ -83,8 +78,8 @@ generate_messages(
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES beginner_tutorials
-#  CATKIN_DEPENDS geometry_msgs message_generation message_runtime roscpp rospy std_msgs
+#  LIBRARIES doc20141008
+#  CATKIN_DEPENDS geometry_msgs kobuki_msgs
 #  DEPENDS system_lib
 )
 
@@ -100,18 +95,21 @@ include_directories(
 )
 
 ## Declare a cpp library
-# add_library(beginner_tutorials
-#   src/${PROJECT_NAME}/beginner_tutorials.cpp
+# add_library(doc20141008
+#   src/${PROJECT_NAME}/doc20141008.cpp
 # )
 
 ## Declare a cpp executable
-# add_executable(beginner_tutorials_node src/beginner_tutorials_node.cpp)
+# add_executable(doc20141008_node src/doc20141008_node.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
-# add_dependencies(beginner_tutorials_node beginner_tutorials_generate_messages_cpp)
+# add_dependencies(doc20141008_node doc20141008_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
+# target_link_libraries(doc20141008_node
+#   ${catkin_LIBRARIES}
+# )
 
 #############
 ## Install ##
@@ -128,7 +126,7 @@ include_directories(
 # )
 
 ## Mark executables and/or libraries for installation
-# install(TARGETS beginner_tutorials beginner_tutorials_node
+# install(TARGETS doc20141008 doc20141008_node
 #   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
@@ -153,28 +151,10 @@ include_directories(
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_beginner_tutorials.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_doc20141008.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
-
-add_executable(listener2 src/listener2.cpp)
-target_link_libraries(listener2 ${catkin_LIBRARIES})
-add_dependencies(listener2 ${PROJECT_NAME}_generate_messages_cpp)
-
-add_executable(add_two_ints_server src/add_two_ints_server.cpp)
-target_link_libraries(add_two_ints_server ${catkin_LIBRARIES})
-add_dependencies(add_two_ints_server ${PROJECT_NAME}_generate_messages_cpp)
-add_executable(add_two_ints_client src/add_two_ints_client.cpp)
-target_link_libraries(add_two_ints_client ${catkin_LIBRARIES})
-add_dependencies(add_two_ints_client ${PROJECT_NAME}_generate_messages_cpp)
-
-add_executable(simple_action_server src/simple_action_server.cpp)
-target_link_libraries(simple_action_server ${catkin_LIBRARIES})
-add_dependencies(simple_action_server ${PROJECT_NAME}_generate_messages_cpp)
-add_executable(simple_action_client src/simple_action_client.cpp)
-target_link_libraries(simple_action_client ${catkin_LIBRARIES})
-add_dependencies(simple_action_client ${PROJECT_NAME}_generate_messages_cpp)
