@@ -27,7 +27,7 @@ How to use these ROS pkgs in your catkin workspace
 # clone this repo to the src directory in your catkin workspace
 $ mkdir -p ~/catkin_ws/soft3/src
 $ cd ~/catkin_ws/soft3/src
-$ git clone https://github.com/utmech-2014/utmech-soft3.git
+$ git clone https://github.com/utmi-2014/utmi-soft3.git
 
 # make it
 $ cd ..
@@ -47,10 +47,10 @@ contributeの仕方。
 * Setup the git remote target in your local workspace __like below__.
 * Change the sources in the branch and send pull requests!
 ```bash
-$ cd ~/catkin_ws/soft3/src/utmech-soft3
+$ cd ~/catkin_ws/soft3/src/utmi-soft3
 $ git branch YOUR-GITHUB-USERNAME
 $ git checkout YOUR-GITHUB-USERNAME
-$ git remote add YOUR-GITHUB-USERNAME git@github.com:YOUR-GITHUB-USERNAME/utmech-soft3
+$ git remote add YOUR-GITHUB-USERNAME git@github.com:YOUR-GITHUB-USERNAME/utmi-soft3
 ```
 
 Information for git & GitHub
